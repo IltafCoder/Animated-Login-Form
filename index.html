@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form</title>
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <div class="left-nav">
+            <img src="logo.png" alt="logo" id="logo">
+            <h1 id="title">Animated Login</h1>
+        </div>
+        <div class="right-nav">
+            <a href="#home" class="nav-opts">
+                Home
+            </a>
+            <a href="#about" class="nav-opts">
+                About
+            </a>
+            <a href="#help" class="nav-opts">
+                Help
+            </a>
+        </div>
+    </nav>
+    <div class="main-window">
+        <div class="left-window">
+            <form>
+                <fieldset class="form-border">
+                    <legend class="form-title">Login</legend>
+                    <label id="welcome-msg">Welcome Back</label>
+                    <div class="entry-1"><label class="form-labels">Username&nbsp&nbsp&nbsp&nbsp&nbsp</label><i
+                            class="fa fa-user icon" id="user-icon"></i><input type="text"
+                            placeholder="Enter email or username" class="form-fields" onfocus="iconColor('user')"
+                            onblur="iconColorReset('user')"></div>
+                    <div class="entry-2"><label class="form-labels">&nbspPassword&nbsp&nbsp&nbsp&nbsp&nbsp</label><i
+                            class="fa fa-lock icon" id="pass-icon"></i><input type="password"
+                            placeholder="Enter your password" class="form-fields" onfocus="iconColor('pass')"
+                            onblur="iconColorReset('pass')"></div>
+                    <div class="help-info">
+                        <div id="remember-pass"><label><input type="checkbox" class="pl">Remember me</label></div>
+                        <div id="forget-pass"><a href="#forgot">Forgot Password?</a></div>
+                    </div>
+                    <div id="btn-block"><button id="login-btn">Log In</button></div>
+                    <div id="line-break">
+                        <hr>
+                    </div>
+                    <div class="no-account-info"><label>Don't have any account?&nbsp</label><a href="#account">Sign
+                            up</a>
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+        <div class="right-window">
+            <label id="join-title">Join us for Best Experience</label>
+            <div class="computer-side">
+                <img src="computer.png" alt="join us" id="computer">
+                <label id="join-info">Join the platform that ignites your passion and connects you with like-minded
+                    individuals, empowering
+                    you to thrive and make a lasting impact. Step into a vibrant community where opportunities abound
+                    and
+                    your journey of growth begins.</label>
+                    
+            </div>
+            <button id="join-btn">Sign Up</button>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
