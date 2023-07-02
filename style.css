@@ -5,20 +5,67 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+}
 
+.move-div-right {
+    animation-name: move-right;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.move-div-left {
+    animation-name: move-left;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.in-left {
+    animation-name: in-left;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.in-right {
+    animation-name: in-right;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.scale-up-div {
+    animation-name: scale-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.scale-in-div {
+    animation-name: scale-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.move-div-top {
+    animation-name: move-top;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .nav-bar {
-    
     display: flex;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     align-content: center;
     height: 50px;
-    background-color:aqua;
+    background-color: rgb(7, 186, 186);
 }
 
-.right-nav > a {
+.right-nav {
+    margin-right: 50px;
+    align-self: center;
+}
+
+.right-nav>a {
     font-family: myFirstFont;
     margin-left: 15px;
     font-size: large;
@@ -30,11 +77,6 @@ body {
 .left-nav {
     margin-left: 50px;
     font-family: myFirstFont;
-    align-self: center;
-}
-
-.right-nav {
-    margin-right: 50px;
     align-self: center;
 }
 
@@ -53,9 +95,10 @@ body {
 
 .main-window {
     display: flex;
+    height: 100%;
+    width: 100%;
     justify-content: center;
 }
-
 
 .left-window {
     margin-top: 80px;
@@ -72,6 +115,14 @@ body {
     height: 100%;
     display: flex;
     width: 50%;
+    justify-content: center;
+}
+
+.reg-form {
+    display: none;
+    margin-top: 60px;
+    width: 50%;
+    height: 100%;
     justify-content: center;
 }
 
@@ -100,17 +151,17 @@ body {
 }
 
 #join-btn {
-    width: 240px;
-    height: 50px;
     position: relative;
-    bottom: 120px;
-    left: 400px;
+    top: 20px;
+    width: 240px;
+    background-color: rgb(7, 186, 186);
+    height: 50px;
 }
 
 .form-border {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     border: 0.5vh solid aqua;
     border-radius: 3vh;
     height: 460px;
@@ -183,11 +234,13 @@ input::placeholder {
     justify-content: space-between;
 }
 
-#remember-pass {
+#remember-pass,
+.help-info label {
     color: white;
 }
 
-#remember-pass label input[type=checkbox] {
+#remember-pass label input[type=checkbox],
+.help-info label input[type=checkbox] {
     position: relative;
     vertical-align: middle;
     height: 20px;
@@ -196,20 +249,19 @@ input::placeholder {
     accent-color: aqua;
 }
 
-#forget-pass a {
+#forget-pass a,
+#agreement label a {
     text-decoration: none;
     color: aqua;
 }
-
 
 #btn-block {
     align-self: center;
     margin-top: 30px;
 }
 
-
-
-#login-btn, #join-btn {
+#login-btn,
+#join-btn {
     font-family: "pt-sans", sans-serif;
     font-weight: 800;
     font-size: small;
@@ -223,16 +275,22 @@ input::placeholder {
 }
 
 #join-btn {
-    background-color:  aqua;
+    background-color: aqua;
+    color: black;
 }
 
-#login-btn:hover, #join-btn:hover {
+#login-btn:hover {
     border: 3px solid aqua;
     background-color: aqua;
     color: black;
 }
 
-#login-btn:active, #join-btn:active {
+#join-btn:hover {
+    border-color: rgb(255, 255, 255);
+}
+
+#login-btn:active,
+#join-btn:active {
     letter-spacing: 0.2em;
 }
 
@@ -249,55 +307,137 @@ input::placeholder {
     color: white;
 }
 
-.no-account-info {
+.ny-account-info {
     margin-top: 20px;
     align-self: center;
 }
 
-.no-account-info label {
+.ny-account-info label {
     color: white;
 }
 
-.no-account-info a {
+.ny-account-info a {
     color: aqua;
     text-decoration: none;
 }
 
-.no-account-info a:hover, #forget-pass a:hover {
+.ny-account-info a:hover,
+#forget-pass a:hover,
+#agreement label a:hover {
     text-decoration: underline;
 }
 
 @font-face {
     font-family: myFirstFont;
     src: url(Lato-Bold.ttf);
- }
+}
 
+@keyframes move-right {
 
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(100%);
+    }
+}
+
+@keyframes move-left {
+
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+@keyframes in-left {
+
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes in-right {
+
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes move-top {
+
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scale-up {
+
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-in {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
+}
 
 @media screen and (max-width: 900px) {
-    .nav-opts {
+    .main-window {
+        flex-direction: column;
+    }
+
+    .left-window,
+    .right-window {
+        align-self: center;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .nav-bar a {
         display: none;
     }
-}
 
-@media screen and (max-width: 600px) {
-    .calc-buttons {
-            grid-template-columns: repeat(3, 1fr);
-
+    .computer-side {
+        flex-direction: column;
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 465px) {
 
-    #logo {
+    .nav-bar {
         display: none;
     }
-}
 
-@media screen and (max-width: 400px) {
-    .calc-buttons {
-        grid-template-columns: repeat(2, 1fr);
-
-}
-
+    #computer {
+        width: 200px;
+    }
 }
