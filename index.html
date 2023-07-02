@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Login Form</title>
+    <title>Animato</title>
 </head>
 
 <body>
@@ -17,34 +17,40 @@
     <nav class="nav-bar">
         <div class="left-nav">
             <img src="logo.png" alt="logo" id="logo">
-            <h1 id="title">Animated Login</h1>
+            <h1 id="title">Animato</h1>
         </div>
         <div class="right-nav">
-            <a href="#home" class="nav-opts">
-                Home
+            <a href="#createaccount" class="nav-opts" onclick='moveDivs("join-btn")'>
+                Create Account
             </a>
-            <a href="#about" class="nav-opts">
-                About
+            <a href="#login" class="nav-opts" onclick='moveDivs("login-btn")'>
+                Log In
+            </a>
+            <a href="#services" class="nav-opts">
+                Services
             </a>
             <a href="#help" class="nav-opts">
                 Help
+            </a>
+            <a href="#aboutus" class="nav-opts">
+                About Us
             </a>
         </div>
     </nav>
     <div class="main-window">
         <div class="left-window">
-            <form>
+            <form class="former">
                 <fieldset class="form-border">
                     <legend class="form-title">Login</legend>
                     <label id="welcome-msg">Welcome Back</label>
                     <div class="entry-1"><label class="form-labels">Username&nbsp&nbsp&nbsp&nbsp&nbsp</label><i
                             class="fa fa-user icon" id="user-icon"></i><input type="text"
-                            placeholder="Enter email or username" class="form-fields" onfocus="iconColor('user')"
-                            onblur="iconColorReset('user')"></div>
+                            placeholder="Enter email or username" class="form-fields"
+                            onfocus="iconColorSet('user-icon')" onblur="iconColorReset('user-icon')"></div>
                     <div class="entry-2"><label class="form-labels">&nbspPassword&nbsp&nbsp&nbsp&nbsp&nbsp</label><i
                             class="fa fa-lock icon" id="pass-icon"></i><input type="password"
-                            placeholder="Enter your password" class="form-fields" onfocus="iconColor('pass')"
-                            onblur="iconColorReset('pass')"></div>
+                            placeholder="Enter your password" class="form-fields" onfocus="iconColorSet('pass-icon')"
+                            onblur="iconColorReset('pass-icon')"></div>
                     <div class="help-info">
                         <div id="remember-pass"><label><input type="checkbox" class="pl">Remember me</label></div>
                         <div id="forget-pass"><a href="#forgot">Forgot Password?</a></div>
@@ -53,7 +59,8 @@
                     <div id="line-break">
                         <hr>
                     </div>
-                    <div class="no-account-info"><label>Don't have any account?&nbsp</label><a href="#account">Sign
+                    <div class="ny-account-info"><label>Don't have any account?&nbsp</label><a href="#account"
+                            onclick='moveDivs("join-btn")'>Sign
                             up</a>
                     </div>
                 </fieldset>
@@ -64,15 +71,47 @@
             <label id="join-title">Join us for Best Experience</label>
             <div class="computer-side">
                 <img src="computer.png" alt="join us" id="computer">
-                <label id="join-info">Join the platform that ignites your passion and connects you with like-minded
+                <label id="join-info">Join the Animato that ignites your passion and connects you with like-minded
                     individuals, empowering
                     you to thrive and make a lasting impact. Step into a vibrant community where opportunities abound
                     and
                     your journey of growth begins.</label>
-                    
+
             </div>
-            <button id="join-btn">Sign Up</button>
-            
+            <button id="join-btn" onclick="moveDivs('join-btn')">Sign Up</button>
+
+        </div>
+
+        <div class="reg-form">
+            <form>
+                <fieldset class="form-border">
+                    <legend class="form-title">Signup</legend>
+                    <label id="welcome-msg">Create Account</label>
+                    <div class="entry-1"><label class="form-labels">Username&nbsp&nbsp&nbsp&nbsp&nbsp</label><i
+                            class="fa fa-user icon" id="user-icon-reg"></i><input type="text"
+                            placeholder="Enter email or username" class="form-fields"
+                            onfocus="iconColorSet('user-icon-reg')" onblur="iconColorReset('user-icon-reg')"></div>
+                    <div class="entry-2"><label class="form-labels">&nbspPassword&nbsp&nbsp&nbsp&nbsp&nbsp</label><i
+                            class="fa fa-lock icon" id="pass-icon-reg"></i><input type="password"
+                            placeholder="Enter your password" class="form-fields"
+                            onfocus="iconColorSet('pass-icon-reg')" onblur="iconColorReset('pass-icon-reg')"></div>
+                    <div class="help-info">
+                        <div id="agreement"><label><input type="checkbox">I agree to the Animato <a
+                                    href="#agreement">User Agreement</a> and <a href="#policy">Privacy
+                                    Policy.</a></label>
+                        </div>
+                    </div>
+                    <div id="btn-block"><button id="login-btn">Sign Up</button></div>
+                    <div id="line-break">
+                        <hr>
+                    </div>
+                    <div class="ny-account-info"><label>Already have an account?&nbsp</label><a href="#account"
+                            onclick='moveDivs("login-btn")'>Sign
+                            in </a>
+                    </div>
+                </fieldset>
+
+            </form>
         </div>
     </div>
 
